@@ -17,9 +17,6 @@ Then use parallel.sh to invoke it 200 times with 50 workers:
 
     ./parallel.sh --iterations 200 --workers 50 /tmp/testParallel.sh
 
-## Todo
-- Only count children with correct parent PID instead of using ps
-
 ## Author
 [@sublimino](http://twitter.com/sublimino)
 
