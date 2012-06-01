@@ -46,10 +46,10 @@ read -n 1 c
 
 for ((i=1; i<=$ITERATIONS; i++)); do
     while (true); do
-        MW=$(cat $MAX_WORKERS_FILE)
+        MAX_WORKERS=$(cat $MAX_WORKERS_FILE)
         WORKERS=$(jobs -r | wc -l)
-        echo -e "\e[91mWorkers: $WORKERS / $MW\e[39m"
-        [[ $WORKERS -lt $MW ]] && break || sleep 1
+        echo -e "\e[91mWorkers: $WORKERS / $MAX_WORKERS\e[39m"
+        [[ $WORKERS -lt $MAX_WORKERS ]] && break || sleep 1
     done
     echo "$i: $WORKER_COMMAND"
     eval "$WORKER_COMMAND &"
